@@ -7,6 +7,13 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -39,4 +46,24 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
+
+  public final XboxController gameController = new XboxController(0);
+  public final XboxController gameController1 = new XboxController(1);
+  
+  public final Joystick joystickLeft = new Joystick(2);
+  public final Joystick joystickRight = new Joystick(3);
+  
+  	// Give meaningful names to the game controller buttons:
+	public final static int gameControllerButtonA = 1;
+	public final static int gameControllerButtonB = 2;
+	public final static int gameControllerButtonX = 3;
+	public final static int gameControllerButtonY = 4;
+	public final static int gameControllerButtonBumperLeft = 5;
+	public final static int gameControllerButtonBumperRight = 6;
+	public final static int gameControllerButtonBack = 7;
+	public final static int gameControllerButtonStart = 8;
+	public final static int gameControllerButtonStickLeft = 9;
+  public final static int gameControllerButtonStickRight = 10;
+  
+  
 }
