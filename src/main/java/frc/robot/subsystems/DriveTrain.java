@@ -105,11 +105,7 @@ public class DriveTrain extends Subsystem
 	
 	public void setLeftRightMotorOutputs(double left, double right)
 	{
-			// This code limits drive speed:
-			double s = Math.signum(left);
-			left = s * Math.min(0.8, Math.abs(left));
-			s = Math.signum(right);
-			right = s * Math.min(0.8,  Math.abs(right));
+
 		
 		drive.tankDrive(left, right, true);
 	}
