@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  * The subsystem that moves the robot.
@@ -37,16 +38,9 @@ public class DriveTrain extends Subsystem
 	
 	public DriveTrain()
 	{
-		if (RobotMap.isCompetitionRobot)
-		{
-			//leftMotor = new WPI_TalonSRX(RobotMap.leftDriveMotorCanDeviceId);
-			//rightMotor = new WPI_TalonSRX(RobotMap.rightDriveMotorCanDeviceId);
-		}
-		else
-		{
-			//leftMotor = new Spark(RobotMap.leftDriveMotorPwmChannel);
-			//rightMotor = new Spark(RobotMap.rightDriveMotorPwmChannel);
-		}
+
+		leftMotor = new Victor(RobotMap.leftDriveMotorPwmChannel);
+		rightMotor = new Victor(RobotMap.rightDriveMotorPwmChannel);
 		
 		// Determine if any motors need to be set inverted:
 		rightMotor.setInverted(true);
@@ -111,14 +105,12 @@ public class DriveTrain extends Subsystem
 	
 	public void setLeftRightMotorOutputs(double left, double right)
 	{
-		if (!RobotMap.isCompetitionRobot)
-		{
 			// This code limits drive speed:
 			double s = Math.signum(left);
 			left = s * Math.min(0.8, Math.abs(left));
 			s = Math.signum(right);
 			right = s * Math.min(0.8,  Math.abs(right));
-		}
+		
 		drive.tankDrive(left, right, true);
 	}
 	

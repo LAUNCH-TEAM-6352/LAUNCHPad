@@ -50,18 +50,12 @@ public class Robot extends TimedRobot
 	// Static initialization
 	static
 	{
-		if (RobotMap.isCompetitionRobot)
-		{
-			driveTrain = new DriveTrain();
-		}
-		else
-		{
+
 			driveTrain = new DriveTrain();
 			//rearLegsExternalEncoder = new RearLegsExternalEncoder();
 			//rearLegsInternalEncoder = new RearLegsInternalEncoder();
 			//motorControllerCalibrator = new MotorControllerCalibrator();
 			//accelerometer = new Accelerometer();
-		}
 	}
 
 

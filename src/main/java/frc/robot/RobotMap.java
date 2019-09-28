@@ -18,9 +18,16 @@ public class RobotMap {
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
-  public static final boolean isCompetitionRobot = false;
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
+
+  //PWM Channels
+  public static final int leftDriveMotorPwmChannel = 2;
+  public static final int rightDriveMotorPwmChannel = 3;
+  
+  //CAN Channels
+  public static final int leftDriveMotorCanDeviceId = 1;
+	public static final int rightDriveMotorCanDeviceId = 2;
 }
